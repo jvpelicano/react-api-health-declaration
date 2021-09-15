@@ -25,7 +25,10 @@ export default class EditHealth extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/health/" + this.props.match.params.id)
+      .get(
+        "https://react-api-jpelicano.herokuapp.com/health/" +
+          this.props.match.params.id
+      )
       .then((res) => {
         this.setState({
           fullname: res.data.fullname,
